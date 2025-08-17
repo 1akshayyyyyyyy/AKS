@@ -574,6 +574,22 @@ main {
   background: rgba(255, 255, 255, 0.12);
 }
 
+/* Remove background and effects from social links container */
+.grid-container.div8 {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.grid-container.div8:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    border-color: transparent;
+}
+
 .card-content {
   display: flex;
   flex-direction: column;
@@ -1082,7 +1098,7 @@ main {
   gap: var(--space-sm);
   padding: var(--space-sm);
   border-radius: var(--border-radius);
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   transition: all var(--animation-duration) var(--animation-timing);
   min-width: 80px;
   text-align: center;
@@ -1115,11 +1131,11 @@ main {
 }
 
 /* Tech Icon Colors */
-.tech-icon.django i { color: #0c4b33; }
+.tech-icon.django i { color: #44B78B; }
 .tech-icon.python i { color: #3776ab; }
 .tech-icon.html i { color: #e34f26; }
 .tech-icon.css i { color: #1572b6; }
-.tech-icon.github i { color: #333; }
+.tech-icon.github i { color: #ffffff; }
 .tech-icon.react i { color: #61dafb; }
 .tech-icon.docker i { color: #2496ed; }
 .tech-icon.postgresql i { color: #336791; }
