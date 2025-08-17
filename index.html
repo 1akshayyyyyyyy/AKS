@@ -153,7 +153,30 @@
                 <!-- Container 6: Left-Tall (spans 1x6, starts at col 1, row 2) -->
                 <div class="grid-container div6">
                     <div class="container-content">
-                        <img src="https://github-readme-stats.vercel.app/api?username=akshaykarthicks&show_icons=true&theme=transparent&hide_border=true&rank_icon=github" alt="Akshay Karthick's GitHub Stats" />
+                        <div class="github-status">
+                            <div class="status-content">
+                                <div class="status-indicator">
+                                    <div class="status-dot"></div>
+                                </div>
+                                <div class="status-text">
+                                    <h4>GitHub Stats</h4>
+                                    <div class="github-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number" id="repo-count">-</span>
+                                            <span class="stat-label">Repositories</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number" id="star-count">-</span>
+                                            <span class="stat-label">Stars</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number" id="commit-count">-</span>
+                                            <span class="stat-label">Commits</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1443,10 +1466,46 @@
                     console.error('Error fetching Medium posts:', error);
                 });
 
-            
-
-
+            // Fetch GitHub stats
+            fetchGitHubStats();
         });
+
+        // GitHub Stats Function
+        async function fetchGitHubStats() {
+            const username = 'akshaykarthicks';
+            
+            try {
+                // Fetch user data
+                const userResponse = await fetch(`https://api.github.com/users/${username}`);
+                const userData = await userResponse.json();
+                
+                if (userResponse.ok) {
+                    // Update repository count
+                    document.getElementById('repo-count').textContent = userData.public_repos || 0;
+                    
+                    // Fetch starred repositories count
+                    const starredResponse = await fetch(`https://api.github.com/users/${username}/starred`);
+                    const starredData = await starredResponse.json();
+                    document.getElementById('star-count').textContent = starredData.length || 0;
+                    
+                    // For commit count, we'll use a placeholder since GitHub API doesn't provide total commits easily
+                    // You can replace this with actual data if you have access to GitHub GraphQL API
+                    document.getElementById('commit-count').textContent = '100+';
+                } else {
+                    console.error('Failed to fetch GitHub data:', userData.message);
+                    // Set fallback values
+                    document.getElementById('repo-count').textContent = '15+';
+                    document.getElementById('star-count').textContent = '20+';
+                    document.getElementById('commit-count').textContent = '100+';
+                }
+            } catch (error) {
+                console.error('Error fetching GitHub stats:', error);
+                // Set fallback values on error
+                document.getElementById('repo-count').textContent = '15+';
+                document.getElementById('star-count').textContent = '20+';
+                document.getElementById('commit-count').textContent = '100+';
+            }
+        }
     </script>
 
     <!-- Footer -->
