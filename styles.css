@@ -1231,20 +1231,21 @@ body.has-custom-cursor [role="button"] {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     animation: fadeIn 0.8s ease-out 0.4s forwards;
     opacity: 0;
+    padding-right: 60px;
 }
 
 .image-container {
     position: relative;
-    width: 100%;
-    max-width: 500px;
-    aspect-ratio: 1 / 1;
+    width: 500px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin-right: 0;
+    margin-left: 280px;
 }
 
 .image-background {
@@ -1362,15 +1363,14 @@ body.has-custom-cursor [role="button"] {
     }
     
     .image-container {
-        max-width: 400px;
+        width: 300px;
+        height: 300px;
     }
 }
 
 @media (max-width: 768px) {
     .hero-section {
         min-height: auto;
-        padding-top: 120px; /* Add padding to avoid navbar overlap */
-        padding-bottom: 60px;
         background-attachment: scroll !important;
     }
     
@@ -1378,11 +1378,11 @@ body.has-custom-cursor [role="button"] {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         height: auto;
-        gap: 40px;
+        gap: 0;
     }
     
     .hero-left {
-        padding: 0 20px;
+        padding: 40px 20px;
         text-align: center;
         align-items: center;
     }
@@ -1404,14 +1404,16 @@ body.has-custom-cursor [role="button"] {
     .hero-right {
         order: -1;
         height: auto;
+        margin-top: 20px;
         padding-right: 0;
         justify-content: center;
     }
     
     .image-container {
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 300px;
+        height: 300px;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .name {
@@ -1421,7 +1423,7 @@ body.has-custom-cursor [role="button"] {
 
 @media (max-width: 480px) {
     .hero-left {
-        padding: 0 10px;
+        padding: 20px;
     }
     
     .name {
@@ -1447,7 +1449,10 @@ body.has-custom-cursor [role="button"] {
     }
     
     .image-container {
-        max-width: 280px;
+        width: 220px;
+        height: 220px;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .gradient-overlay {
@@ -5733,5 +5738,3 @@ body.has-custom-cursor [data-cursor-hover] {
 }
 
 
-
-  
