@@ -1,6 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/Person">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Apps</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Live Demos</h1>
+    <p>Explore two Streamlit apps side‑by‑side. On mobile, they stack for easy viewing.</p>
+  </header>
 
+  <main class="apps-grid">
+    <section class="app-card">
+      <div class="app-header">
+        <h2>StockPicker Crew</h2>
+        <a class="open-link" href="https://stockpicker-crew.streamlit.app/" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      </div>
+      <div class="iframe-wrap">
+        <iframe
+          title="StockPicker Crew"
+          src="https://stockpicker-crew.streamlit.app/"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+        ></iframe>
+        <div class="iframe-fallback" aria-hidden="true">
+          <p>Embedding may be blocked by the app's security settings.</p>
+          <a href="https://stockpicker-crew.streamlit.app/" target="_blank" rel="noopener noreferrer">Open StockPicker Crew</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-card">
+      <div class="app-header">
+        <h2>Food Catalyst</h2>
+        <a class="open-link" href="https://foodcatalyst.streamlit.app/" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      </div>
+      <div class="iframe-wrap">
+        <iframe
+          title="Food Catalyst"
+          src="https://foodcatalyst.streamlit.app/"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+        ></iframe>
+        <div class="iframe-fallback" aria-hidden="true">
+          <p>Embedding may be blocked by the app's security settings.</p>
+          <a href="https://foodcatalyst.streamlit.app/" target="_blank" rel="noopener noreferrer">Open Food Catalyst</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <noscript>
+    <div class="noscript">
+      JavaScript is disabled. Please use the links above to open the apps in new tabs.
+    </div>
+  </noscript>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Embedded Streamlit Showcase</p>
+  </footer>
+
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
